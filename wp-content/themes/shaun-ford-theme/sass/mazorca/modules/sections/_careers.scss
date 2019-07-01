@@ -1,0 +1,84 @@
+.careers {
+
+	&__hero {
+		@extend %hero;
+	}
+
+	&__col {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	&__title {
+		@extend %title-xl;
+		line-height: 1.5;
+		margin-bottom: 0;
+
+		&-box {
+			padding: 15px;
+
+			@include under(sm){
+				margin-top: 85px;
+			}
+		}
+	}
+
+	&__nano {
+		padding: 15px;
+		height: 400px;
+		overflow-y: scroll;
+	
+		@include under(sm){
+			height: 225px;
+			margin-bottom: 25px;
+		}
+
+		&-content {
+			display: flex;
+			align-items: center;
+			flex-flow: row wrap;
+
+			@include under(sm){
+				padding: 7.5px !important;
+			}
+		}
+	}
+
+	&__vacancy {
+
+		&-box {
+			margin-bottom: 15px;
+			padding: 15px;
+			display: flex;
+			align-items: center;
+			flex-flow: row wrap;
+			width: 100%;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&-title {
+			@extend %subtitle;
+			font-weight: bold;
+		}
+
+		&-description p,
+		&-description {
+			font-family: f(sans);
+			font-size: lh(sm);
+			font-weight: 500;
+			margin-bottom: s();
+		}
+
+		&-link {
+			@extend %link;
+			font-weight: bold;
+			font-size: 18px;
+			letter-spacing: 1px;
+		}
+	}
+}

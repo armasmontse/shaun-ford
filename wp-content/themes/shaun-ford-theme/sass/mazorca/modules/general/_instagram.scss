@@ -1,0 +1,163 @@
+.instagram {
+
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	// display: none;
+	z-index: z(instagram);
+	
+	// Visibilidad para que sea vea la animación
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0.2s, opacity 0.2s linear;
+
+	&__overlay {
+		@extend %layer;
+		
+		// Visibilidad para que sea vea la animación
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0s linear;
+	}
+	
+	&__wrapper {
+		position: absolute;
+		max-width: 100%; 
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		right: -100%;
+		top: 0;
+		transition: right 0.2s ease;
+		min-width: 30%;
+
+		@include under(md) {
+			min-width: 37.5%;
+		}
+
+		@include under(tb) {
+			min-width: 45%;
+		}
+
+		@include under(sm) {
+			min-width: 85%;
+		}
+	}
+
+	&.is-active {
+		visibility: visible;
+		opacity: 1;
+
+		.instagram__wrapper {
+			right: 0;
+		}
+
+		.instagram__overlay {
+			visibility: visible;
+			opacity: 0.7;
+		}
+	}
+
+	&__container {
+		height: 100%;		
+	}
+
+	&__close {
+		height: 30px;
+		// real 50px
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		font-family: f(sans);
+		font-weight: 500;
+		letter-spacing: 2px;
+		display: flex; 
+		align-items: center;
+		padding: 0 25px;
+
+		button {
+			@extend %button;
+			padding-left: 0;
+			padding-right: 0;
+
+			&:hover,
+			&:focus {
+			    color: #bbb;
+			    text-decoration: none;
+			    cursor: pointer;
+			}
+		}
+	}
+
+	&__title {
+		height: 25px;
+		// real 45px
+		padding: 0 25px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center; 
+		text-align: center;
+		justify-content: center;
+		@extend %subtitle;
+	}
+
+	&__footer {
+		height: 50px;
+		// real 70px
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 0 25px;
+		display: flex;
+		align-items: center; 
+		text-align: center;
+		justify-content: center;
+		@extend %subtitle;
+	}
+
+	&__gallery {
+		height: calc(100% - 50px - 45px - 70px);
+		padding: 0 25px;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		align-content: flex-start;
+		overflow: hidden;
+
+		& > .nano-content {
+			display: flex;
+			flex-flow: row wrap;
+			align-content: flex-start;
+			align-items: center;
+		}
+
+		&-container {
+			width: 50%;
+			padding-bottom: 10px;
+
+			&:nth-of-type(odd) {
+				padding-right: 5px;
+			}
+			&:nth-of-type(even) {
+				padding-left: 5px;
+			}
+		}
+
+		&-image {
+			padding-top: 100%;
+			display: block;
+			position: relative;
+			width: 100%;
+
+			img {
+			    bottom: 0;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			    height: 100%;
+			    width: 100%;
+			    max-width: 100%;
+			}
+		}
+	}
+}

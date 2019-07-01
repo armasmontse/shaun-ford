@@ -1,0 +1,74 @@
+.slick {
+
+    &-arrow {
+        width: 18px !important;
+        height: 75px !important;
+        background-size: 18px 75px !important;        
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 101;
+        position: absolute;
+        border: none;
+        top: 50%;
+        margin-top: -22px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    &-prev {
+        left: 10px;
+        right: auto;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS44MSA3Ni4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7b3BhY2l0eTowLjc1O308L3N0eWxlPjwvZGVmcz48dGl0bGU+UmVjdXJzbyAxPC90aXRsZT48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxOS4zNyAwLjIyIDAuNTYgMzguMTEgMTkuMzcgNzYiLz48L2c+PC9nPjwvc3ZnPg==) !important;
+    }
+
+    &-next {
+        right: 10px;
+        left: auto;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS44MSA3Ni4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7b3BhY2l0eTowLjc1O308L3N0eWxlPjwvZGVmcz48dGl0bGU+UmVjdXJzbyAyPC90aXRsZT48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIwLjQ1IDc2IDE5LjI1IDM4LjExIDAuNDUgMC4yMiIvPjwvZz48L2c+PC9zdmc+) !important;
+    }
+
+    &-list,
+    &-track {
+        height: 100%;
+    }
+
+    &-dots {
+        // position: absolute;
+        text-align: center;
+        transform: translate3d(0,0,0);
+        z-index: 10;
+        transition: .3s;
+        width: 100%;
+
+        & li {
+            display: inline-block;
+
+            &.slick-active button{
+                background: #FFFFFF !important;
+                opacity: 1;
+            }
+
+            & button {
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                opacity: .2;
+                background: transparent !important;
+                border: 1px solid #FFFFFF;
+                cursor: pointer;
+                margin: 0 5px;
+                color: transparent;
+                padding: 0;
+            }
+        }
+    }
+
+    // Helpers for slick
+    // &-active {
+    //     background-color: red !important;
+    // }
+
+    // &-current {
+    //     background-color: purple !important;
+    // }
+}

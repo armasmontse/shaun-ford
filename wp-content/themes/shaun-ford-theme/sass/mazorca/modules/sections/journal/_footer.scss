@@ -1,0 +1,303 @@
+.journal {
+	&__footer {
+		background: #000;
+		padding: 40px 0 50px;
+		@include under (mn) {
+			padding: 20px 0;	
+		}
+		&--container {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+
+			@include under (nv) {
+				width: 85%;
+			}
+			@include under (mn) {
+				display: block;
+				text-align: center;
+			}
+		}
+
+		&--col {
+			h6 {
+				@extend %label-footer;
+			}
+		}
+		
+		&--ttl {
+			@extend %label-footer;
+			@extend %label-16-24;
+			margin-bottom: 20px;
+			@include under (sm) {
+				margin-bottom: 10px;
+				margin-top: 10px;
+			}
+
+			// Back
+			&.back {
+				text-transform: uppercase;
+				&:after{
+					// content: "\21E1";
+					content: url(../images/arrow-back.svg);
+					width: 7px;
+					height: 7px;
+					position: absolute;
+					top: -5px;
+					padding-left: 8px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		// Newsletter
+		&--newsletter {
+			width: 338px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			@include under (tb) {
+				width: 200px;
+				display: block;
+				@include under (mn) {
+					margin: 0 auto;
+				}
+			}
+	
+			& .error {
+				background-color: red;
+				display: inline-block;
+			}
+
+			& em.error {
+				display: none !important;	
+			}
+
+			&--input {
+				background: #000;
+			    border-top: none;
+			    border-left: none;
+			    border-right: none; 
+			    width: 45%;
+			    padding: 0px;
+			    margin-bottom: 20px;
+			    font-size: 14px;
+    			line-height: 24px;
+    			margin-right: 0px;
+    			@include under (tb) {
+    				width: 100%;
+    			}
+    			@include under (sm) {
+    				
+    				font-size: 11px;
+    				line-height: 18px;
+    			}
+				&::placeholder {
+					opacity: 0.5;
+				}
+			}
+			&--input.left{
+				margin-right: 0px;
+				@include under (tb) {
+					margin-right:0px;
+				}
+			}
+			&-contenedor {
+				position: relative;
+				width: 45%;
+				@include under (tb) {
+    				width: 100%;
+    			}
+				&--select{
+					width: 100%;
+				    border: none;
+				    background: #000;
+				    color: rgba(255, 255, 255, 0.5);
+				    text-transform: uppercase;
+				    border-bottom: 1px solid #FFF;
+				    border-radius: 0;
+				    font-size: 14px;
+	    			line-height: 24px;
+	    			margin-right: 10px;
+					display: block;
+					outline: none;
+					&::-ms-expand { 
+					display: none;
+					}
+					@include under(tb) {
+						margin-bottom: 20px;
+					}
+					@include under (sm) {
+	    				font-size: 11px;
+	    				line-height: 18px;
+	    				width: 100%;
+	    			}
+				}
+				&--icon {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					user-select: none;
+					cursor: pointer;
+					pointer-events: none;
+					right: 0px;
+					color: rgba(255, 255, 255, 0.5);
+					@include under(sm) {
+						top: 26%;
+						right: 0px;
+					}
+				}
+			}
+			&--submit {
+				width: auto;
+			    border: none;
+			    background: #000 !important;
+			    border-bottom: 1px solid #FFF;
+			    display: inline-block !important;
+			    float: right;
+			    text-transform: uppercase;
+			    font-size: 16px;
+    			line-height: 24px;
+    			padding: 0px;
+    			margin-right: 5%;
+    			cursor: pointer;
+    			@include under (nv) {
+    				width: auto;
+    				float: none;
+    				
+    			}
+    			@include under (sm) {
+    				font-size: 11px;
+    				line-height: 18px;
+    				padding: 15px 0 5px;
+    				margin-right: 0%;
+    				margin-bottom: 35px;
+
+    			}
+			}
+		}
+		&-links{
+			@include under(sm){
+				margin: 10px 0px;
+			}
+			
+		}
+		&--link {
+			text-transform: uppercase;
+			@extend %label-footer;
+			@extend %label-16-24;	
+		}
+		&-address {
+			@include under(sm) {
+				margin: 40px 0px;
+			}
+			
+		}
+		&--domicilio{
+			font-family: f(sans);
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 500;
+			@include under (sm) {
+				font-size: 14px;
+				line-height: 17px;
+			}
+			span{
+				top: -0.5em;
+				font-size: 65%;
+				line-height: 0;
+				position: relative;
+				vertical-align: baseline;
+			}
+
+		}
+		&--mail {
+			color: red;
+			padding-top: 25px;
+		}
+		
+		// Down
+		&--down {
+			@extend %label-footer;
+			font-family: f(sans);
+			max-width: 1200px;
+			margin: 0 auto;
+			padding-top: 40px;
+			@include under(nv) {
+				width: 85%;
+			}
+			@include under (md) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+%label-footer {
+	font-family: f(sans);
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+%label-16-24 {
+	font-size: 16px;
+	line-height: 24px;
+	@include under (sm) {
+		font-size: 13px;
+		line-height: 10px;
+	}	
+}
+
+.alert {
+	&__box {
+		position: fixed;
+		top: 0;
+		left: 0;
+		color: c(black);
+		width: 100%;
+		border-bottom: 2px solid c(black);
+		position: center;
+		background-color: c(white);
+		text-align: center;
+		font-family: f(sans);
+		font-size: 14px;
+		padding: 17px 15px 15px;
+		font-weight: bold;
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+	&__message {
+		text-align: center;
+		width: 100%;
+	}
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+}
+
+
+// .myg-native-select .material-icons {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   user-select: none;
+//   cursor: pointer;
+//   pointer-events: none;
+// }
+
+// .myg-native-select__icon {
+//   left: 1rem;
+// }
+// .myg-native-select__arrow {
+//   right: 1rem;
+// }

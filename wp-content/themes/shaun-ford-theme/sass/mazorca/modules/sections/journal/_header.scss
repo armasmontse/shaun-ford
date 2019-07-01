@@ -1,0 +1,99 @@
+body.page__journal {
+	background: #FFF;
+}
+
+.journal__navbar-item {
+	color: #000;
+}
+
+.journal__navbar--burger span,
+.journal__navbar--burger.is-active span {
+	background-color: #000;
+}
+
+.journal__navbar-item:hover {
+	color: #000;
+}
+
+.journal {
+	&__navbar {
+		
+		&-menu {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		&--temporada {
+		    width: 100%;
+			display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    margin-bottom: 20px;
+			@include under (mn) {
+				justify-content: flex-end;
+				margin-bottom: 5px;
+			}
+
+		}
+
+		&--backissue {
+			@extend %label-menu-back;
+			color: #000;
+			padding: 0 4.5rem;
+			letter-spacing: 1px;
+			@include under (nv) {
+				padding: 0 1rem;
+			}
+			@include under (mn) {
+				display: none !important;
+			}
+
+			&--logo {
+				max-width: 240px;
+				width: 50%;
+				height: 70px;
+				margin: 0 1rem;
+				object-fit: contain;
+				margin-top: 4px;
+				margin-bottom: 8px;
+				@include under (mn) {
+					width: 65%;
+				}
+			}
+		}
+		&--backissue.link-back-journal{
+			&:before {
+				top:23px;
+			}
+		}
+
+		// Desktop
+		&--desktop {
+			&--logo {
+				@include over (nv) {
+					display: block !important;
+				}
+				@include under (nv) {
+					display: none !important;
+				}
+			}
+		}
+
+		// Responsive
+		&--responsive {
+			&--container {
+				padding: 0 10px;
+			}
+			&--logo {
+				@include over (nv) {
+					display: none !important;
+				}
+				@include under (nv) {
+					display: block !important;
+					max-height: 22px !important;
+				}
+			}
+		}
+		
+	}
+}

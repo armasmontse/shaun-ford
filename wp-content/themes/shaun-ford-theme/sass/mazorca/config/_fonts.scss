@@ -1,0 +1,26 @@
+//_________________________ Config:Fuentes _________________________ \\
+
+/**
+ * Declare fonts using the Mixin
+ */
+
+// declara-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal)
+@include declara-font-face(Calibre, '../fonts/Calibre-Semibold', 600, normal);
+@include declara-font-face(Calibre, '../fonts/Calibre-Regular');
+@include declara-font-face(Calibre, '../fonts/Calibre-Medium', 500, normal);
+@include declara-font-face(MyriadPro, '../fonts/MyriadPro-Regular');
+@include declara-font-face(Palatino, '../fonts/PalatinoLinotype-Roman');
+
+/// Refer to font families through mapped variables.
+/// Font families must be written as lists, that is, between parenthesis.
+///
+///
+$fonts:(
+	sans:		('Calibre', sans-serif),
+	pro:		('MyriadPro', sans-serif),
+	serif:		('Palatino', serif)
+);
+
+@function f($font) {
+	@return map-get($fonts, $font);
+}

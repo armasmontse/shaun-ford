@@ -1,0 +1,71 @@
+%label {
+    font-family: f(sans);
+    font-size: 12px;
+    font-weight: normal;
+    color: c();
+    text-transform: uppercase;
+}
+
+%label-select {
+    @extend %label;
+    font-family: f(inputs);
+    font-size: 16px;
+    font-style: italic;
+}
+
+%label-footer {
+    @extend %title;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+%label-light {
+    @extend %label;
+    font-size: 11px;
+    font-weight: 200;
+    text-transform: none;
+}
+
+//Journal
+%label-welcome {
+    @extend %label;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+%label-issue {
+    font-family: f(serif);
+    font-size: 14px;
+    letter-spacing: 3px;
+    line-height: 17px;
+    text-transform: uppercase;
+}
+
+%label-issue-date {
+    font-family: f(serif);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+%label-issue-category {
+    font-family: f(sans);
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1px;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+}
+
+%label-menu-back {
+    @extend %label;
+    font-size: 14px;
+    line-height: 16.8px;
+    font-weight: 500;
+}

@@ -1,0 +1,32 @@
+//__________ MODULES __________ \\
+
+/* GENERAL */
+// @import "modules/general/_header";
+// @import "modules/general/_footer";
+// @import "modules/general/_modal";
+@import "modules/general/_navbar";
+@import "modules/general/_instagram";
+
+/* _____ SECTIONS_____ */
+@import "modules/sections/_home";
+@import "modules/sections/_notfound";
+@import "modules/sections/_contact";
+@import "modules/sections/_services";
+@import "modules/sections/_showroom";
+@import "modules/sections/_projects";
+@import "modules/sections/_archive";
+@import "modules/sections/_careers";
+
+/* __ JOURNAL __ */
+@import "modules/sections/journal/_header";
+@import "modules/sections/journal/_footer";
+@import "modules/sections/journal/_issue";
+@import "modules/sections/journal/_single-post";
+@import "modules/sections/journal/_archive-issue";
+@import "modules/sections/journal/_modal";
+
+
+// @import "modules/sections/_sucursal";
+// @import "modules/sections/_comunidad";
+// @import "modules/sections/_noticia";
+// @import "modules/sections/_contacto";

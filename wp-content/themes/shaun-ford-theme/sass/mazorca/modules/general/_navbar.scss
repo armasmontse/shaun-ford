@@ -1,0 +1,331 @@
+@mixin hamburger($dimensions){
+    cursor: pointer;
+    display: block;
+    height: $dimensions;
+    position: relative;
+    width: $dimensions;
+    
+    span {
+        background-color: c();
+        display: block;
+        height: 1px;
+        left: 50%;
+        margin-left: -7px;
+        position: absolute;
+        top: 50%;
+        transition: none 0.3 ease;
+        transition-property: background, left, opacity, transform;
+        width: 15px;
+        
+        &:nth-child(1){
+            margin-top: -6px;
+        }
+        
+        &:nth-child(2){
+            margin-top: -1px;
+        }
+        
+        &:nth-child(3){
+            margin-top: 4px;
+        }
+    }
+    
+    &:hover {
+        background-color: transparent;
+    }
+    
+    // Modifers
+    &.is-active {
+        
+        span {  
+            background-color: c();
+            
+            &:nth-child(1){
+                margin-left: -5px;
+                transform: rotate(45deg);
+                transform-origin: left top;
+            }
+            
+            &:nth-child(2){
+                opacity: 0;
+            }
+            
+            &:nth-child(3){
+                margin-left: -5px;
+                transform: rotate(-45deg);
+                transform-origin: left bottom;
+            }
+
+        }
+    }
+}
+
+$navbar-background-color: red !default;
+$navbar-height: 70px !default;
+
+$navbar-item-color: c(white) !default;
+$navbar-item-hover-color: c(white) !default;
+$navbar-item-hover-background-color: transparent !default;
+$navbar-item-active-color: c(white) !default;
+$navbar-item-active-background-color: transparent !default;
+
+$navbar-divider-background-color: red !default;
+
+.navbar {
+    min-height: $navbar-height;
+    height: 70px;
+    position: relative;
+    font-family: f(sans);
+    // opacity: 0.5;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: z(menuMain);
+    }
+
+    &.is-transparent {
+        
+        a.navbar-item,
+        .navbar-link{
+            
+            &:hover,
+            &.is-active{
+                background-color: transparent;
+            }
+        }
+    }
+    
+    & > .grid__container{
+        align-items: stretch;
+        display: flex;
+        justify-content: space-between;
+        min-height: $navbar-height;
+        width: 100%;
+
+        @include under(nv) {
+            padding: 0;
+        }
+
+        & > .navbar{
+            @include over(nv){
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+        }
+    }
+
+    &.has-shadow {
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.navbar-brand {
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    display: flex;
+    min-height: $navbar-height;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    @include under(nv) {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7); 
+    }
+
+    .navbar-item {
+        display: flex;
+        align-items: center;
+
+        img {
+            max-height: 21px;
+            width: auto;
+
+            @include under(nv) {
+                max-height: 16px !important;
+            }
+        }
+    }
+
+}
+
+.navbar-burger {
+    @include hamburger($navbar-height);
+    margin-left: auto;
+
+    @include over(nv){
+        display: none;
+    }
+}
+
+.navbar-menu {
+    display: none;
+
+    @include under(nv) {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+    }
+
+    @include over(nv){
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    .navbar-item {
+
+        @include under(nv) {
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &.is-active{
+
+        @include under(nv) {
+            display: block
+        }
+    }
+}
+
+.navbar-start{
+    align-items: center;
+
+    @include over(nv){
+        display: flex;
+        justify-content: flex-start;
+        margin-right: auto;
+
+        .navbar-item,
+        .navbar-link{
+            font-size: lh(sm);
+        }
+    }
+}
+
+.navbar-end{
+    align-items: center;
+
+    @include over(nv){
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+        margin-top: 15px;
+
+        
+    }
+    .navbar-item,
+    .navbar-link{
+        @include under(sm) {
+            font-size: lh(xs);
+        }
+    }
+}
+
+.navbar-item,    
+.navbar-link {
+    cursor: pointer;
+    color: $navbar-item-color;
+    display: block;
+    line-height: 1.5;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    &:hover,
+    &.is-active {
+        background-color: $navbar-item-hover-background-color;
+        color: $navbar-item-hover-color;
+        text-decoration: underline;
+    }
+
+    @include over(nv){
+        align-items: flex-end;
+        display: flex;
+
+        &.is-active{
+            color: $navbar-item-active-color;
+        }
+
+        &.is-active:not(:hover){
+            background-color: $navbar-item-active-background-color;
+        }
+    }
+}
+.journal__navbar {
+    .navbar-item,    
+    .navbar-link {
+        font-size: 16px;
+    }
+
+    .navbar-brand {
+        background-color: transparent;
+    }
+}
+.navbar-item {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @include over(nv){
+
+        &.has-dropdown{
+            align-items: stretch;
+        }
+        
+        &.is-active,
+        &.is-hoverable:hover{
+            .navbar-dropdown{
+                display: block;
+                
+                &.is-boxed{
+                    opacity: 1;
+                    pointer-events: auto;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+
+.navbar-content {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.navbar-link {
+    padding-right: 2.5em;
+
+    @include over(nv){
+        &::after{
+            // +arrow($navbar-dropdown-arrow);
+            margin-top: -0.375em;
+            right: 1.125em;
+            top: 50%;
+        }
+    }
+}
+
+.navbar-divider {
+    background-color: $navbar-divider-background-color;
+    border: none;
+    display: none;
+    height: 1px;
+    margin: 0.5rem 0;
+
+    @include over(nv){
+        display: block;
+    }
+}
+
+
+.nav-up {
+    top: -70px !important;
+}

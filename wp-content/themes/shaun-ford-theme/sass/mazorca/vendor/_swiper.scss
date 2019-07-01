@@ -1,0 +1,68 @@
+.swiper-button-next-v {
+	left: calc(50% - 9px) !important;
+	bottom: 0px !important;
+	top: auto !important;
+	transform: rotate(90deg);
+
+    &.swiper-button-disabled {
+        opacity: 0 !important;
+    }
+}
+
+.swiper-pagination-h {
+	bottom: 52px !important;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    background-color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: white;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    width: 18px !important;
+    height: 75px !important;
+    background-size: 18px 75px !important;
+}
+
+.swiper-button-next {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS44MSA3Ni4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7b3BhY2l0eTowLjc1O308L3N0eWxlPjwvZGVmcz48dGl0bGU+UmVjdXJzbyAyPC90aXRsZT48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIwLjQ1IDc2IDE5LjI1IDM4LjExIDAuNDUgMC4yMiIvPjwvZz48L2c+PC9zdmc+) !important;
+}
+
+.swiper-button-prev {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOS44MSA3Ni4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7b3BhY2l0eTowLjc1O308L3N0eWxlPjwvZGVmcz48dGl0bGU+UmVjdXJzbyAxPC90aXRsZT48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxOS4zNyAwLjIyIDAuNTYgMzguMTEgMTkuMzcgNzYiLz48L2c+PC9nPjwvc3ZnPg==) !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.swiper-pagination-white .swiper-pagination-bullet {
+    background: transparent !important;
+    border: 1px solid c();
+}
+
+.swiper-pagination-white .swiper-pagination-bullet-active {
+    background: c() !important;
+}

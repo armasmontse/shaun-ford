@@ -1,0 +1,181 @@
+.journal__single {
+	color: #000;
+
+	&--text {
+		max-width: 700px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		padding: 53px 0 30px;
+
+		@include under(sm) {
+			padding: 30px 0 15px;
+		}
+
+		&.segundo-texto {
+			@extend %paragraph-issue-description;
+			margin-bottom: 0px;
+			padding-top: 35px;
+			@include under(sm) {
+				margin-bottom: 20px;
+			}
+			.journal__single--divider{
+				margin: 0 auto 15px;
+			}
+		}
+	}
+
+	&--issue {
+		@extend %label-issue;
+		margin-bottom: 6px;
+		@include under(sm) {
+			margin-bottom: 7px;
+		}
+	}
+
+	&--divider {
+		width: 15px;
+		height: 2px;
+		background-color: #000;
+		margin: 0 auto 9px;
+	}
+
+	&--categoria {
+		@extend %label-issue-category;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: inline-block;
+		border: none;
+	}
+
+	&--date {
+		@extend %label-issue-date;
+		display: inline-block;
+		margin-bottom: 23px;
+		@include under(sm) {
+			margin-bottom: 15px;
+		}
+		@include under(mn) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&--ttl {
+		@extend %title-journal;
+		color: #000;
+		font-size: 60px;
+		line-height: 72px;
+		padding: 0 1em;
+		margin-bottom: 32px;
+		@include under(sm) {
+			font-size: 45px;
+			line-height: 60px;
+			padding: 0 3em;
+			margin-bottom: 20px;
+		}
+		@include under(mn) {
+			font-size: 35px;
+			line-height: 40px;
+			padding: 0 2em;
+			margin-bottom: 10px;
+		}
+		@include under(xs) {
+			font-size: 25px;
+			line-height: 30px;
+			padding: 0 0em;
+			margin-bottom: 5px;
+		}
+	}
+
+	&--desc {
+		text-align: left;
+		@extend %paragraph-issue-description;
+		@include under (xs) {
+		    text-align: justify;
+		}
+	}
+
+	&--parrafo {
+		@extend %paragraph-issue-description;
+	}
+
+	&--img {
+   		height: 545px;
+   		@include under(xs) {
+			height: 100vh;
+		}
+	}
+		
+	&--segundo--parrafo {
+		text-align: left;
+		margin-bottom: 35px;
+		@include under(sm) {
+			margin-bottom: 25px;
+		}
+		@include under(mn) {
+			margin-bottom: 5px;
+		}
+		@include under (xs) {
+		    text-align: justify;
+		}
+	}
+
+	&--copy {
+		font-family: f(sans);
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+	&--backTop {
+		
+		width: 73%;
+		margin: 0 auto;
+		text-align: center;
+		padding:0px 0px 100px 0px;
+		@include under(sm) {
+			width: 100%;
+		}
+
+		
+	}
+	&--divider--dotted {
+		background-color: #fff;
+		border-top: 2px dotted #B28F24;
+		margin: 0px 0 94px;
+		@include under(sm) {
+			margin: 15px 0 30px;
+		}
+	}
+	&--back {
+		text-align: center !important;
+	}
+
+	&--slick {
+		height: 622px;
+
+		&-slide {
+			height: 100%;
+			opacity: 0.5;
+
+			&:focus {
+				outline: 0;
+			}
+
+			&.slick-current {
+				opacity: 1;
+			}
+		}
+
+		&-box {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			margin: 10px;
+		}
+
+		&-image {
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+.notfound {
+
+	&__hero {
+		@extend %hero;
+	}
+
+	&__layer {
+		@extend %layer;
+	}
+
+	&__col {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	&__title {
+		@extend %title-xl;
+	}
+
+	&__text {
+		@extend %paragraph-md;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	&__link {
+		@extend %link;
+		display: inline-block;
+		margin-top: s(2);
+	}
+}

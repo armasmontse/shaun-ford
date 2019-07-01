@@ -1,0 +1,38 @@
+%paragraph {
+    font-family: f(sans);
+    font-size: lh(sm);
+    font-weight: normal;
+    color: c();
+    line-height: lh();
+    margin-bottom: s(2);
+    letter-spacing: 1px;
+}
+
+%paragraph-md {
+	@extend %paragraph;
+    font-size: lh(md);
+}
+
+// %paragraph-small {
+//     @extend %paragraph;
+//     font-size: 15px;
+//     font-weight: 200;
+//     color: c();
+//     line-height: lh(md);
+// }
+
+//journal
+%paragraph-modal-journal {
+    @extend %paragraph;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+// Se ocupa para descripcion de issue, en home como en single
+%paragraph-issue-description {
+    font-family: f(sans);
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 24px;
+}

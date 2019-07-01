@@ -1,0 +1,18 @@
+.gallery__image {
+	width: 150px;
+	height: 150px;
+	margin-bottom: 5px;
+	background-size: cover;
+	background-position: center;
+}
+.gallery__image-container {
+	border: 5px solid #fff;
+	margin: 0 10px 10px 0;
+	display: inline-block;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+.gallery__image-container button {
+	width: 100%;
+}

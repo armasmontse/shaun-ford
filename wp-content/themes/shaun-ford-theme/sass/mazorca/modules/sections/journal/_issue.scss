@@ -1,0 +1,324 @@
+.issue {
+	&-background {
+		background-size: cover;
+	    background-repeat: no-repeat;
+	    position: relative;
+	    // background-position: center 90%;
+	    background-position: 83% 33%;
+	    width: 100%;
+   		height: 545px;
+   		@include under(xs) {
+			height: 100vh;
+			transition: height 999999s;
+		}
+	}
+	&__row {
+		position: relative;
+	    width: 100%;
+	    height: 100%;
+	}
+	&__container {
+		// max-width: calc(1200px + 40px);
+		max-width: 1200px;
+	    margin: 0 auto;
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: flex-start;
+	    color: c(black)
+	}
+	&__col-1-1 {
+		width: 100%;
+	}
+	&__col-1-3 {
+   		width: 33.33%;
+   		padding: 0px 10px;
+   		@include under(sm){
+			width:50%;
+   		}
+   		@include under(xs){
+			width:100%;
+			padding: 0px;
+   		}
+	}
+	&-journal {
+		padding-top: 155px;
+		@include under(sm) {
+		    padding-top: 80px;
+		}
+		@include under(xs) {
+		    padding-top: 55px;
+		}
+	}
+	&__content {
+		
+	}
+	&__head {
+		text-align: center;
+		color: c();
+		width: 100%;
+		max-width: 440px;
+		min-width: 320px;
+		margin: 0 auto;
+		position: absolute;
+		top: 50%; 
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		&--date {
+			font-family: f(sans);
+			font-size: 16px;
+			font-weight: 600;
+			letter-spacing: 3px;
+			line-height: 20px;
+		    margin-bottom: 15px;
+		}
+		&--category {
+			font-family: f(serif);
+			font-size: 72px;
+			@include under(xs) {
+				font-size: 65px;
+			}
+		}
+		&--text {
+			font-family: f(sans);
+			font-size: 16px;
+			letter-spacing: 1px;
+			line-height: 24px;
+			// padding: 0 125px;
+		}
+	}
+	&__box {
+		width: 100%;
+	    position: relative;
+	    display: inline-block;
+	    vertical-align: top;
+	    margin-bottom: 12px;
+	    &:before {
+		    content: '';
+		    display: block;
+		    padding-top: 100%;
+		}
+		&-image {
+			position: absolute;
+			top: 0; 
+			left: 0; 
+			bottom: 0; 
+			right: 0;
+			width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		}
+		&-text {
+			@include under(xs) {
+				padding: 0px 15px;
+			}
+			&--categoryIssue {
+				@extend %label-issue;
+				// padding-top: 12px;
+			}
+
+			&--date {
+				@extend %label-issue-date;
+			}
+			&--category{
+				@extend %label-issue-category;
+				line-height: 10px;
+				margin-top: 10px;
+			}
+
+			&--tittle {
+				@extend %title-issue;
+			    padding-top: 25px;
+			}
+
+			&--description {
+				@extend %paragraph-issue-description;
+				padding-top: 22px;
+				margin-bottom: 33px;
+				@include under(xs) {
+				margin-bottom: 35px;
+				}
+			}
+		}
+	}
+	&__link {
+		&-view {
+			margin: 47px auto 120px auto;
+			&--morePost{
+				margin: 47px auto 34px auto;
+			}
+			
+			@include under(sm) {
+			    margin: 40px auto 80px auto;
+			}
+			@include under(xs) {
+			    margin: 30px auto 50px auto;
+			}
+		}
+	}
+
+	&-backgroundColor {
+		background-color: #f2f2f2;
+		width: 100%;
+		height: 100%;
+		padding-top: 33px;
+		padding-bottom: 80px;
+	}
+	&__palette {
+		&-title {
+			font-family: f(sans);
+			font-size: 16px;
+			font-weight: 600;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			line-height: 20px;
+			text-align: center;
+			margin-bottom: 55px;
+		}
+		&-contImage {
+			position: relative;
+		    width: 50%;
+		    margin: 0 auto;
+		    @include under(sm){
+				width: 70%;
+		    }
+		    @include under(xs){
+				width: 100%;
+		    }
+		    &:before{
+		        display: block;
+		        content: " ";
+		        width: 100%;
+		        padding-top: 103.64%;
+		    }
+		}
+		&-image {
+			position: absolute;
+	        top: 0;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;
+		}
+	}
+
+	&-backgroundPhrases {
+		background-color: c(gray-medium);
+		padding-top: 63px;
+		padding-bottom: 32px;
+	}
+	&__phrases {
+		text-align: center;
+		color: c(white);
+		margin-top: 65px;
+		margin-bottom: 30px;
+		width: 50%;
+		margin: 0 auto;
+		@include under(sm){
+			width: 80%;
+	    }
+		@include under(xs){
+			width: 100%;
+			padding: 0 15px;
+	    }
+		&--ttl {
+			font-family: f(serif);
+			font-size: 36px;
+			line-height: 46px;
+			font-style: italic;
+		}
+		&--author {
+			font-family: f(sans);
+			font-size: 16px;
+			font-weight: 600;
+			text-transform: uppercase;
+			padding-top: 12px;
+			&:before {
+				content: "—";
+			    display: inline-block;
+			    margin-right: 14px;
+			    color: c(white);
+			    font-weight: 600;
+			}
+		}
+		&-firm {
+			position: relative;
+			width: 180px;
+			margin: 0 0 0 auto;
+		    @include under(sm){
+				width: 160px;
+		    }
+		    @include under(xs){
+				margin: 0 auto;
+		    }
+		    &:before{
+		        display: block;
+		        content: " ";
+		        width: 100%;
+		        padding-top: 27.58621%;
+		    }
+		}
+		&-image {
+			position: absolute;
+	        top: 0;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;
+		}
+		
+	}
+
+	// INSTAGRAM
+
+	&__instagram{
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 160px;
+		&--follow {
+			color: #000;				
+			transform: rotate(270deg);
+			transform-origin: left top 0;
+			height: 35px;
+			position: absolute;
+			left: 10px;
+			top: 97%;
+			font-family: f(calibre);
+			font-size: 16px;
+			line-height: 19px;
+			text-transform: uppercase;
+			width: 150px;
+			text-align: center;
+		}
+
+		&--box {
+			float: left;
+			display: flex;
+			flex-wrap: no-wrap;
+    		justify-content: flex-start;
+    		margin-left: 50px;
+    		width: calc(100% - 50px);
+    		overflow: hidden;
+		}
+
+		&--img {
+			min-width: 150px;
+			min-height: 150px;
+			max-width: 150px;
+			max-height: 150px;
+			margin: 5px 5px 5px 0;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+

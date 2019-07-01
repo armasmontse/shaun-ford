@@ -1,0 +1,137 @@
+%link {
+	color: c();
+	cursor: pointer;
+	font-family: f(sans);
+	font-size: lh(sm);
+	font-weight: normal;
+	text-decoration: underline;
+	text-transform: uppercase;
+
+	&:hover,
+	&:active {
+		color: c();
+	}
+}
+
+// %link-menu {
+// 	@extend %link;
+// 	font-family: f(inputs);
+// 	font-size: 16px;
+// 	font-style: italic;
+// 	font-weight: 200;
+// 	&:hover,
+// 	&:active {
+// 		color: c(ocher);
+// 	}
+// }
+
+// %link-user{
+// 	@extend %link;
+// 	font-size: 13px;
+// }
+
+// %link-italic {
+// 	@extend %link;
+// 	font-family: f(inputs);
+// 	font-size: 16px;
+// 	font-style: italic;
+// }
+
+// %link-hover {
+//   @extend %link;
+// 	color: c(beige);
+
+//   &:hover {
+//     color: c();
+//   }
+// }
+
+// %link-form {
+// 	@extend %link;
+// 	font-size: 11px;
+// 	text-transform: none;
+// 	text-decoration: underline;
+// }
+
+// %link-italic-footer{
+// 	@extend %link-italic;
+// 	font-size: 11px;
+// }
+
+// %link-footer {
+// 	@extend %link;
+// 	font-size: 10px;
+// 	font-weight: 200;
+
+// 	&:hover,
+// 	&:active {
+// 		color: c(ocher);
+// 	}
+// }
+
+//Journal
+// %link-back-journal, .link-back-journal {
+// 	@extend %link;
+// 	font-weight: 600;
+// 	color: c(black);
+// 	letter-spacing: 3px;
+// 	line-height: 12px;	
+// 	border-bottom: 1px solid #000;
+//     padding-bottom: 1px;
+//     width: auto;
+//     display: inline-block;
+//     text-decoration: none;
+
+// 	&:hover,
+// 	&:active {
+// 		color: c(gray-medium);
+// 	}
+// }
+
+%link-back-journal, .link-back-journal {
+	@extend %link;
+	font-weight: 600;
+	color: c(black);
+	letter-spacing: 3px;
+	line-height: 12px;	
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+	&:after {
+		content: '';
+	    display: block;
+	    margin: 1px auto 0px auto;
+	    height: 1px;
+	    width: 100%;
+	    background: c(black);
+	    transition: width 0.7s ease, background-color 0.7s ease;
+	}
+	&:hover:after {
+		background-color: c(black);
+    	width: 0;
+    	color: c(black);
+	}
+
+	&:before {
+		content: '';
+	    display: block;
+	    margin: 5px auto 0px auto;
+	    height: 1px;
+	    width: 0px;
+	    position: relative;
+	    top: 19px;
+	    background: c(black);
+	    transition: width 0.7s ease, background-color 0.7s ease;
+	}
+	&:hover:before {
+		background-color: c(black);
+    	width: 100%;
+    	color: c(black);
+
+	}
+	&:hover,
+	&:active {
+		color: c(gray-medium);
+	}
+	
+}

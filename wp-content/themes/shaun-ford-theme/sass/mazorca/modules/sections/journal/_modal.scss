@@ -1,0 +1,191 @@
+.modal{
+	background-color: c(gray-dark);
+	color: c();
+	position: fixed;
+	// // max-width: 1410px;
+	// width: 100%;
+	// height: 100vh;
+	max-width: 1400px;
+	width: 100%;
+    height: 80vh;
+	top: 50%;
+	left: 50%;
+	z-index:9;
+	text-align: center;
+	visibility: hidden;
+	transform: translate(-50%,-50%);
+	@include under(sm){
+		width: 98%;
+		padding:0 20px;
+	}
+	@include under(xs) {
+		height: 100vh;
+	}
+	&-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 8;
+		width: 100%;
+		height: 100%;
+		visibility: hidden;
+		opacity: 0;
+		background: rgba(0, 0, 0, 0.9);
+		transition: 0.3s;
+	}
+	&-close {
+		@extend %paragraph;
+		position: absolute;
+		top: 40px;
+		right: -75px;
+		padding: .3em 0.4em;
+		color: c();
+		font-size: 12px;
+		letter-spacing: 3px;
+		&:hover {
+			cursor: pointer;
+		}
+		@include under(nv) {
+			right: 0px;
+		}
+		@include under(md){    
+			right: 0px;
+			top: 0px;
+		}
+		@include under(sm) {
+			top: 35px;
+			right: 10px;
+		}
+		@include under(xs) {
+			top: 17px;
+			right: -10px;
+		}
+	}
+	&__content {
+		text-align: center;
+		// padding: 105px 0px;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-around;
+		width: 72%;
+    	
+    	position: relative;
+		opacity: 0;
+		transform: scale(0.8);
+		transition: 0.3s;
+		top: 50%;
+		left: 50%;
+		z-index: 9;
+		text-align: center;
+		transform: translate(-50%, -50%);
+		@include under(nv) {
+			width: 90%;
+		}
+		@include under(sm) { 
+			display: block;
+			width:100%;
+			top: 0;
+			left: 0;
+			text-align: center;
+			transform: none;
+			padding: 20px 0px;
+		}
+    	&-image {
+			width: 50%;
+			padding: 2%;
+			display: flex;
+			align-items: center;
+			@include under(sm) {
+				width: 70%;
+				margin: 0 auto;
+			}
+		}
+		&-text {
+			width: 50%;
+			max-width: 500px;
+		    margin: 0 auto;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+			// @include under(nv) {
+			// 	padding-top: 6%;
+			// }
+			@include under(sm){
+				width: 100%;
+				padding-top: 35px;
+				padding-top: 9%;
+			}
+			@include under(xs) {
+				padding-top: 35px;
+				min-width: 100%;
+			}
+
+			&--ttl {
+				&--welcome {
+					@extend %label-welcome;
+					letter-spacing: 3px;
+					margin-bottom: 26px;
+					@include under(xs) {
+						margin-bottom: 15px;
+					}
+				}
+				&--titleJournal {
+					@extend %title-journal;
+					margin-bottom: 62px;
+					letter-spacing: -1px;
+					@include under(nv) {
+						font-size: 68px;
+					}
+					@include under(md) {
+						font-size: 51px;
+						margin-bottom: 35px;
+					}
+					@include under(xs) {
+						font-size: 40px;
+						margin-bottom: 25px;
+					}
+					    
+				}
+			}
+			&--txt {
+				@extend %paragraph-modal-journal;
+				margin-bottom: 24px;
+			}
+			&--continue {
+				padding-bottom: 1px;
+   				width: auto;
+			    display: inline-block !important;
+			    text-decoration: none;
+				color: c();
+				font-weight: 200;
+				letter-spacing: 1px;
+			}
+			&--linkContinue{
+				@extend %link-back-journal;
+				color: c(white);
+				// border-bottom: 2px solid #fff;
+				&:before, &:after{
+					background: c(white);
+				}
+				&:hover {
+					color: c(white);
+					&:before, &:after{
+						background: c(white);
+					}
+				}
+			}
+		}	
+	}
+	&--show {
+		visibility: visible;
+		opacity: 1;
+		overflow-y: scroll;
+	}
+}
+.modal--show ~ .modal-overlay {
+	visibility: visible;
+	opacity: 1;
+}
+.modal--show .modal__content {
+	opacity: 1;
+}

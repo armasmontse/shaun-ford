@@ -1,0 +1,93 @@
+.home {
+
+	&__hero {
+		@extend %hero;
+	}
+
+	&__row {
+		align-items: flex-end;
+	}
+
+	&__layer {
+		@extend %layer;
+	}
+
+	$slide-gutter: s(1, gutter);
+
+	&__container {
+		margin: 0 auto;
+		height: 100%;
+		width: 100%;
+		max-width: 1000px;
+		padding: $slide-gutter;
+		display: flex;
+	}
+
+	&__slide {
+		
+		&-content{
+			width: 100%;
+			max-width: 450px;
+			text-align: left;
+			margin: 0 auto;
+			margin-bottom: 0;
+			padding: 1em;
+		
+			&.left {
+				margin-right: auto;
+				margin-left: 0;
+				text-align: left;
+			}
+	
+			&.right {
+				margin-left: auto; 
+				margin-right: 0; 
+				text-align: right;
+			}
+
+			&.center {
+				margin-right: auto;
+				margin-left: auto; 
+				text-align: center;
+			}
+
+			a {
+				text-decoration: underline;
+				cursor: pointer;
+				font-weight: 600;
+			}
+		}
+
+		&-title {
+			@extend %title-xl;
+		}
+
+		&-subtitle {
+			@extend %subtitle;
+		}
+
+		&-text {
+			@extend %paragraph;
+
+			p {
+				@extend %paragraph;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				img {
+					max-width: 156px;
+					display: inline-block;
+				}
+			}
+		}
+
+		&-link {
+			@extend %link;
+			letter-spacing: 3px;
+			margin-bottom: 20px;
+			display: inline-block;
+		}
+	}
+}

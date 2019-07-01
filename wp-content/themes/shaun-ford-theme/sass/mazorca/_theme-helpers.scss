@@ -1,0 +1,120 @@
+.wrap {
+	width: 100%; max-width: $container-max-width;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.background-image--center,
+.background-image {
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	position: relative;
+}
+
+.background-image {
+	background-position: center 90% !important;
+
+	&--center {
+		background-position: center 30% !important;
+	}
+}
+
+%ttl {
+	font-size: 36px;
+	line-height: 1.2;
+	font-family: f(medium);
+	@include under(md) { font-size: 30px; }
+	@include under(sm) { font-size: 26px; }
+}
+
+%subttl {
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	font-family: f(regular);
+	margin-bottom: 30px;
+}
+
+%btn {
+	cursor: pointer;
+    padding: 8px 15px;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 3px;
+	background-color: c(yellow);
+	@include ease-transition;
+	&:hover { background-color: c(golden); }
+}
+
+%hero {
+	height: 100vh; 
+	position: relative;
+	width: 100%;
+
+	@include under(mn) {
+		// Para que no cambie de tamaño el hero cuando se oculte el navbar en mobile chrome.
+		transition: height 999999s;
+	}
+}
+
+%layer {
+	position: absolute;
+	width: 100%;
+	background-color: black;
+	height: 100%;
+	opacity: 0.2;
+	top: 0;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+@include under(xs) {
+	.is-hidden-xs {
+	    display: none !important;
+	}
+}
+
+@include under(mn) {
+	.is-hidden-mn {
+	    display: none !important;
+	}
+}
+
+@include under(sm) {
+	.is-hidden-sm {
+	    display: none !important;
+	}
+}
+
+@include under(tb) {
+	.is-hidden-tb {
+	    display: none !important;
+	}
+}
+
+@include over(tb) {
+	.is-hidden-md-only {
+		display: none;
+	}
+}
+
+@include under(md) {
+	.is-hidden-md {
+	    display: none !important;
+	}
+}
+
+@include over(tb) {
+	.is-hidden-lg-only {
+		display: none;
+	}
+}
+
+@include under(lg) {
+	.is-hidden-lg {
+	    display: none !important;
+	}
+}

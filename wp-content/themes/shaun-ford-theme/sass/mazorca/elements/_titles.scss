@@ -1,0 +1,73 @@
+%title {
+    font-family: f(serif);
+    font-size: 12px;
+    font-weight: normal;
+    color: c();
+    margin-bottom: s(2);
+    line-height: 1;
+}
+
+%title-xl {
+    @extend %title;
+    font-size: 72px;
+
+    @include under(sm) {
+        font-size: lh(lg);
+    }
+}
+
+%title-lg {
+    @extend %title;
+    font-size: lh(lg);
+}
+
+%title-md {
+    @extend %title;
+    font-size: lh(md);
+}
+
+%title-sm {
+    @extend %title;
+    font-size: lh(sm);
+}
+
+%subtitle {
+    font-family: f(sans);
+    font-size: lh(sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 3px;
+    margin-bottom: s();
+}
+
+// %title-description {
+//     @extend %title;
+//     font-family: f(inputs);
+//     font-style: italic;
+// }
+
+// %title-img {
+//   @extend %title;
+//   color: c(beige);
+// }
+
+// %title-bill {
+//     @extend %title;
+//     font-size: 13px;
+//     color: c(brown);
+// }
+
+//Journal
+%title-journal {
+    @extend %title;
+    font-family: f(serif);
+    letter-spacing: 0px;
+    font-size: 72px;
+}
+
+%title-issue {
+    font-family: f(serif);
+    font-size: 30px;
+    line-height: 36px;
+}
