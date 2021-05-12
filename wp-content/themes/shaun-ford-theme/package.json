@@ -41,7 +41,7 @@
     "cltvo-maps": "^1.0.2",
     "lodash.debounce": "^4.0.8",
     "ramda": "^0.24.1",
-    "swiper": "^3.4.2",
+    "swiper": "^6.5.1",
     "velocity-animate": "^1.5.0"
   }
 }
